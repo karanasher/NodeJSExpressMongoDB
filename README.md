@@ -63,11 +63,11 @@ db.listofplayers.insert([{"name" : "Alice Wood", "goals" : 25}])
 ```
 ##Other comments
 Please check the following,
-* allPlayers.js
+* routes/allPlayers.js
   * Backend handler to list all the players that currently exist in the db.
-* allPlayers.ejs
+* views/allPlayers.ejs
   * Front end page that displays all the documents in the db.
-* addPlayer.js
+* routes/addPlayer.js
   * Backend handler to add a new player in the db.
-* addPlayer.ejs
+* views/addPlayer.ejs
   * Front end page that displays a form to add a new player in the db.
