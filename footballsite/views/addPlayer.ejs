@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome. Here is where you shall add a new player.</p>
+
+    <form name = "addPlayerForm" method = "post", action = "/addplayer/addplayertodb">
+			Name. <input type = "text" name = "name" />
+      
+      <br><br>
+			
+      Goals. <input type = "number" name = "goals" />
+      
+      <br><br>
+			
+      <input type = "submit" value = "Add player to db" />
+		</form>
+
+  </body>
+</html>
