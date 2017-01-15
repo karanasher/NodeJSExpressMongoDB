@@ -23,6 +23,7 @@ On node js cmd,
 cd <project name>
 npm install
 ```
+The node_modules folder is not included in the repository. The folder gets created automatically after running the above commands.
 
 If it says that the versions that you're using are too old, follow the prompt and put in the latest versions.
 ```
@@ -60,3 +61,13 @@ We shall insert 1 document in the database. This will be used later to check if 
 ```
 db.listofplayers.insert([{"name" : "Alice Wood", "goals" : 25}])
 ```
+##Other comments
+Please check the following,
+* allPlayers.js
+  * Backend handler to list all the players that currently exist in the db.
+* allPlayers.ejs
+  * Front end page that displays all the documents in the db.
+* addPlayer.js
+  * Backend handler to add a new player in the db.
+* addPlayer.ejs
+  * Front end page that displays a form to add a new player in the db.
