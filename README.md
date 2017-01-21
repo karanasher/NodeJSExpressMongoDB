@@ -300,3 +300,8 @@ Please check the following,
   * Backend handler to add a new player in the db.
 * views/addPlayer.ejs
   * Front end page that displays a form to add a new player in the db.
+
+
+
+##Useful resources
+* [MongoDB Node.JS Driver Documentation](https://mongodb.github.io/node-mongodb-native/)
