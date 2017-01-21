@@ -305,3 +305,4 @@ Please check the following,
 
 ##Useful resources
 * [MongoDB Node.JS Driver Documentation](https://mongodb.github.io/node-mongodb-native/)
+* [Quality video tutorial](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=10&ved=0ahUKEwis6sC_j9PRAhVTQLwKHR71DysQtwIIRDAJ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DDo_Hsb_Hs3c&usg=AFQjCNGD_9ZPJvHn0f-6NZeXuJSunRvJdA&bvm=bv.144224172,d.dGc&cad=rja)
