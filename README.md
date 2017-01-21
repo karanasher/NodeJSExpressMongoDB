@@ -1,7 +1,8 @@
-# NodeJSWithExpressAndMongoDB
-This is a simple walkthrough of how one can use node js with express and mongo db.
+# NodeJS Express MongoDB
+This is a simple walkthrough of how one can use Node JS with Express and MongoDB.
 
 ## Installation
+###Express Generator
 ```
 npm install -g express-generator
 ```
@@ -30,7 +31,7 @@ If it says that the versions that you're using are too old, follow the prompt an
 npm install -g npm@latest
 ```
 
-##Quick start
+##Quick Start
 
 In the ```<project name>``` folder on node js cmd, 
 ```
