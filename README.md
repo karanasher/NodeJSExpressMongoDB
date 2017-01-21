@@ -2,17 +2,19 @@
 This is a simple walkthrough of how one can use Node JS with Express and MongoDB.
 
 ## Installation
-###Express Generator
+####Express Generator
 ```
 npm install -g express-generator
 ```
 
+####Project creation
 Go the directory where you want your site to be. We shall use the embedded js template.
 This will create an express project.
 ```
 express <project name> --view=ejs -c less
 ```
 
+####Dependency
 Go to package.json, in the dependencies section, add the following.
 ```json
 "kerberos": "~0.0.17",
