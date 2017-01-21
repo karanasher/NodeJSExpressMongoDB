@@ -57,14 +57,14 @@ use footballsite
 ```
 footballsite is the database that we shall use.
 
-We shall insert 1 document in the database. This will be used later to check if the info got inserted correctly in the db (via node). We will use the students collection within the sampsite db.
+We shall insert 1 document in the database. This will be used later to check if the info got inserted correctly in the db (via node). We will use the listofplayers collection within the footballsite db.
 ```
 db.listofplayers.insert([{"name" : "Alice Wood", "goals" : 25}])
 ```
 
 
 
-##To fetch all documents from the database
+##Fetch all documents from MongoDB
 ```javascript
 //This is to display all the existing documents in the db.
 router.get('/', function(req, res, next) {
@@ -112,7 +112,7 @@ router.get('/', function(req, res, next) {
 
 
 
-##To add a document in the database
+##Add a document in MongoDB
 ```javascript
 /*
 * The onclick handler of the Add player to db button on the add player page.
@@ -163,6 +163,130 @@ router.post('/addplayertodb', function(req, res) {
   });
 });
 ```
+
+
+
+##Update a document in MongoDB
+```javascript
+/*
+* This will update a document in the db.
+*/
+router.get('/', function(req, res, next) {
+  //This entitiy will connect to the db.
+  var MongoClient = mongodb.MongoClient;
+
+  //The url of the footballsite db that you need to connect to.
+  var url = 'mongodb://localhost:27017/footballsite';
+
+  //Connect to the db.
+  MongoClient.connect(url, function(err, db) {
+    if(err) {
+      //Some issue with the connection.
+      console.log('Unable to connect to the server', err);
+    } else {
+      //Connection established.
+      console.log('Connection established with \'' + db.databaseName + '\'.');
+
+      //The listofplayers you put your info in.
+      var listofplayers = db.collection('listofplayers');
+
+      //Convert the listofplayers to an array.
+      listofplayers.find({}).toArray(function(err, result) {
+        if(err) {
+          res.send(err);
+        } else if(result.length) {
+          console.log('The database \'' + db.databaseName + '\' has ' + result.length + ' documents.');
+
+          //This will update the document in the db.
+          listofplayers.updateOne({"name" : "Alice Wood"}, { $set: { goals : 125 } }, function(err, result) {
+              if(err) {
+                  console.log(err);
+              } else {
+                  console.log('Document updated successfully.');
+                  res.redirect('../allplayers');
+              }
+          });
+        } else {
+          res.send('No documents found.');
+        }
+
+        //Close the db connection before leaving.
+        db.close();
+      })
+    }
+  });
+});
+```
+
+
+
+##Delete a document from MongoDB
+```javascript
+/*
+* This will delete a document in the db.
+*/
+router.get('/', function(req, res, next) {
+  //This entitiy will connect to the db.
+  var MongoClient = mongodb.MongoClient;
+
+  //The url of the footballsite db that you need to connect to.
+  var url = 'mongodb://localhost:27017/footballsite';
+
+  //Connect to the db.
+  MongoClient.connect(url, function(err, db) {
+    if(err) {
+      //Some issue with the connection.
+      console.log('Unable to connect to the server', err);
+    } else {
+      //Connection established.
+      console.log('Connection established with \'' + db.databaseName + '\'.');
+
+      //The listofplayers you put your info in.
+      var listofplayers = db.collection('listofplayers');
+
+      //Convert the listofplayers to an array.
+      listofplayers.find({}).toArray(function(err, result) {
+        if(err) {
+          res.send(err);
+        } else if(result.length) {
+          console.log('The database \'' + db.databaseName + '\' has ' + result.length + ' documents.');
+
+          //This will update the document in the db.
+          listofplayers.deleteOne({"name" : "Freddie Lide"}, function(err, result) {
+              if(err) {
+                  console.log(err);
+              } else {
+                  console.log('Document deleted successfully.');
+                  res.redirect('../allplayers');
+              }
+          });
+        } else {
+          res.send('No documents found.');
+        }
+
+        //Close the db connection before leaving.
+        db.close();
+      })
+    }
+  });
+});
+```
+
+
+
+##Find a single document in MongoDB
+After getting the list of documents (in this case listofplayers) from MongoDB,
+```javascript
+listofplayers.findOne({"name" : "Alice Wood"}, function(err, result) {
+          if(err) {
+              console.log(err);
+          } else {
+              console.log('Record found.');
+              console.log(result.name);
+          }
+      });
+```
+
 
 
 ##Other comments
