@@ -5,7 +5,7 @@ var router = express.Router();
 var mongodb = require('mongodb');
 
 /*
-* This is to just display a page with a form to dd a new player.
+* This is to just display a page with a form to add a new player.
 * This will not perform any db operation.
 */
 router.get('/', function(req, res, next) {

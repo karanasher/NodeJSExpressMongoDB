@@ -17,6 +17,12 @@ var addPlayer = require('./routes/addPlayer');
 //The route that will display all the players in the db.
 var allPlayers = require('./routes/allPlayers');
 
+//The route that will update a player.
+var updatePlayer = require('./routes/updatePlayer');
+
+//The route that will delete a player.
+var deletePlayer = require('./routes/deletePlayer');
+
 var app = express();
 
 // view engine setup
@@ -40,6 +46,12 @@ app.use('/addplayer', addPlayer);
 
 //When the user visits the /allplayers url, use the allPlayers route to display all the players in the db.
 app.use('/allplayers', allPlayers);
+
+//When the user visits the /updateplayer url, use the updatePlayer route to update a player in the db.
+app.use('/updateplayer', updatePlayer);
+
+//When the user visits the /deleteplayer url, use the deletePlayer route to delete a player in the db.
+app.use('/deleteplayer', deletePlayer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
