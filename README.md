@@ -2,19 +2,19 @@
 This is a simple walkthrough of how one can use Node JS with Express and MongoDB.
 
 ## Installation
-####Express Generator
+#### Express Generator
 ```
 npm install -g express-generator
 ```
 
-####Project creation
+#### Project creation
 Go the directory where you want your site to be. We shall use the embedded js template.
 This will create an express project.
 ```
 express <project name> --view=ejs -c less
 ```
 
-####Dependency
+#### Dependency
 Go to package.json, in the dependencies section, add the following.
 ```json
 "kerberos": "~0.0.17",
@@ -33,7 +33,7 @@ If it says that the versions that you're using are too old, follow the prompt an
 npm install -g npm@latest
 ```
 
-##Quick Start
+## Quick Start
 
 In the ```<project name>``` folder on node js cmd, 
 ```
@@ -67,7 +67,7 @@ db.listofplayers.insert([{"name" : "Alice Wood", "goals" : 25}])
 
 
 
-##Fetch all documents from MongoDB
+## Fetch all documents from MongoDB
 ```javascript
 //This is to display all the existing documents in the db.
 router.get('/', function(req, res, next) {
@@ -115,7 +115,7 @@ router.get('/', function(req, res, next) {
 
 
 
-##Add a document in MongoDB
+## Add a document in MongoDB
 ```javascript
 /*
 * The onclick handler of the Add player to db button on the add player page.
@@ -169,7 +169,7 @@ router.post('/addplayertodb', function(req, res) {
 
 
 
-##Update a document in MongoDB
+## Update a document in MongoDB
 ```javascript
 /*
 * This will update a document in the db.
@@ -223,7 +223,7 @@ router.get('/', function(req, res, next) {
 
 
 
-##Delete a document from MongoDB
+## Delete a document from MongoDB
 ```javascript
 /*
 * This will delete a document in the db.
@@ -277,7 +277,7 @@ router.get('/', function(req, res, next) {
 
 
 
-##Find a single document in MongoDB
+## Find a single document in MongoDB
 After getting the list of documents (in this case listofplayers) from MongoDB,
 ```javascript
 listofplayers.findOne({"name" : "Alice Wood"}, function(err, result) {
@@ -292,7 +292,7 @@ listofplayers.findOne({"name" : "Alice Wood"}, function(err, result) {
 
 
 
-##Other comments
+## Other comments
 Please check the following,
 * routes/allPlayers.js
   * Backend handler to list all the players that currently exist in the db.
@@ -305,6 +305,6 @@ Please check the following,
 
 
 
-##Useful resources
+## Useful resources
 * [MongoDB Node.JS Driver Documentation](https://mongodb.github.io/node-mongodb-native/)
 * [Quality video tutorial](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=10&ved=0ahUKEwis6sC_j9PRAhVTQLwKHR71DysQtwIIRDAJ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DDo_Hsb_Hs3c&usg=AFQjCNGD_9ZPJvHn0f-6NZeXuJSunRvJdA&bvm=bv.144224172,d.dGc&cad=rja)
